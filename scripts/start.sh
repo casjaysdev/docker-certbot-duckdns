@@ -112,4 +112,6 @@ if [ -n "$LETSENCRYPT_AUTO_RENEW" ]; then
     certbot --manual-public-ip-logging-ok renew
     chown -R $UID:$GID /etc/letsencrypt
   done
+else
+  exit
 fi
