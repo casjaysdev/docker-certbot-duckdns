@@ -2,11 +2,11 @@
 FROM alpine:latest
 
 # Maintainer information
-LABEL maintainer="Maksim Stojkovic <https://github.com/maksimstojkovic>" \
-      org.label-schema.vcs-url="https://github.com/maksimstojkovic/docker-letsencrypt"
+LABEL maintainer="CasjaysDev <https://github.com/casjaysdev>" \
+      org.label-schema.vcs-url="https://github.com/casjaysdev/docker-certbot-duckdns"
 
 # Install tools required
-RUN apk --no-cache add bash certbot curl
+RUN apk --no-cache add bash certbot curl py3-pip && pip install certbot_dns_duckdns --break-system-packages
 
 # Copy scripts
 WORKDIR /scripts
